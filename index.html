@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài tập 32 - Đèn Kéo Quân</title>
+    <title>Bài tập 32</title>
     <style>
-     
         body {
             margin: 0;
             padding: 0;
-            background-color: #0d0d0d; /* Màu nền tối */
-            background-image: radial-gradient(circle, #2c2c2c 0%, #000000 100%); /* Hiệu ứng nền */
+            background-color: #0d0d0d;
+            background-image: radial-gradient(circle, #2c2c2c 0%, #000000 100%);
             color: white;
             height: 100vh;
             display: flex;
@@ -29,38 +28,34 @@
             letter-spacing: 2px;
         }
 
-      
+        /* Vùng chứa 3D (Sân khấu) */
         .stage {
             width: 200px;
-            height: 180px; /* Giảm chiều cao chút cho cân đối với bánh */
+            height: 180px;
             perspective: 1000px;
             position: relative;
             margin-top: 20px;
         }
-
-     
         .lantern {
             width: 100%;
             height: 100%;
             position: absolute;
             transform-style: preserve-3d;
-            animation: spin 20s linear infinite; /* Quay chậm rãi */
+            animation: spin 20s linear infinite;
             cursor: pointer;
         }
-
-   
         .lantern div {
             position: absolute;
             width: 200px;
             height: 180px;
             border: 2px solid #ffeb3b;
-            background-color: rgba(255, 255, 255, 0.9); /* Nền trắng mờ để ảnh rõ hơn */
+            background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
             display: flex; 
             justify-content: center; 
             align-items: center;
             overflow: hidden;
-            border-radius: 10px; /* Bo góc nhẹ cho đẹp */
+            border-radius: 10px;
         }
 
         .lantern img {
@@ -71,11 +66,10 @@
         }
 
         .lantern div:hover img {
-            transform: scale(1.1); /* Phóng to nhẹ khi di chuột vào 1 mặt */
+            transform: scale(1.1);
         }
 
-      
-        
+        /* Vị trí 6 mặt */
         .face1 { transform: rotateY(0deg) translateZ(175px); }
         .face2 { transform: rotateY(60deg) translateZ(175px); }
         .face3 { transform: rotateY(120deg) translateZ(175px); }
@@ -83,7 +77,6 @@
         .face5 { transform: rotateY(240deg) translateZ(175px); }
         .face6 { transform: rotateY(300deg) translateZ(175px); }
 
-      
         @keyframes spin {
             from { transform: rotateY(0deg); }
             to { transform: rotateY(360deg); }
@@ -103,18 +96,13 @@
 
     <div class="stage">
         <div class="lantern" id="myLantern">
-            <!-- Mặt 1 -->
-            <div class="face1">
-                <!-- Nếu muốn đúng đề bài (có ảnh chân dung), hãy đổi tên ảnh chân dung thành img1.jpg -->
-                <img src="images/img1.jpg" alt="Mặt 1" onerror="this.src='https://loremflickr.com/200/200/mooncake?lock=1'">
-            </div>
-            
-            <!-- Các mặt còn lại -->
-            <div class="face2"><img src="images/img2.jpg" alt="Mặt 2" onerror="this.src='https://loremflickr.com/200/200/mooncake?lock=2'"></div>
-            <div class="face3"><img src="images/img3.jpg" alt="Mặt 3" onerror="this.src='https://loremflickr.com/200/200/mooncake?lock=3'"></div>
-            <div class="face4"><img src="images/img4.jpg" alt="Mặt 4" onerror="this.src='https://loremflickr.com/200/200/mooncake?lock=4'"></div>
-            <div class="face5"><img src="images/img5.jpg" alt="Mặt 5" onerror="this.src='https://loremflickr.com/200/200/mooncake?lock=5'"></div>
-            <div class="face6"><img src="images/img6.jpg" alt="Mặt 6" onerror="this.src='https://loremflickr.com/200/200/mooncake?lock=6'"></div>
+          
+            <div class="face1"><img src="img1.jpg" alt="Mặt 1"></div>
+            <div class="face2"><img src="img2.jpg" alt="Mặt 2"></div>
+            <div class="face3"><img src="img3.jpg" alt="Mặt 3"></div>
+            <div class="face4"><img src="img4.jpg" alt="Mặt 4"></div>
+            <div class="face5"><img src="img5.jpg" alt="Mặt 5"></div>
+            <div class="face6"><img src="img6.jpg" alt="Mặt 6"></div>
         </div>
     </div>
 
@@ -122,18 +110,13 @@
 
     <script>
         const lantern = document.getElementById('myLantern');
-
-        // Dừng khi rê chuột vào
         lantern.addEventListener('mouseenter', () => {
             lantern.style.animationPlayState = 'paused';
         });
-
-        // Quay tiếp khi rê chuột ra
         lantern.addEventListener('mouseleave', () => {
             lantern.style.animationPlayState = 'running';
         });
     </script>
 
 </body>
-
 </html>

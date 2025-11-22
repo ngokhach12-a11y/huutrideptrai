@@ -3,73 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài tập 32</title>
+    <title>Đèn Kéo Quân Trung Thu</title>
     <style>
         body {
             margin: 0;
-            padding: 0;
-            background-color: #0d0d0d;
-            background-image: radial-gradient(circle, #2c2c2c 0%, #000000 100%);
-            color: white;
+            background: radial-gradient(circle, #2c2c2c 0%, #000000 100%);
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            font-family: 'Segoe UI', sans-serif;
+            justify-content: center;
             overflow: hidden;
+            font-family: sans-serif;
         }
 
         h1 {
-            margin-bottom: 40px;
-            text-shadow: 0 0 15px #ff9800;
             color: #ff9800;
+            text-shadow: 0 0 20px #ff9800;
+            margin-bottom: 50px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            text-align: center;
         }
 
-        /* Vùng chứa 3D (Sân khấu) */
         .stage {
             width: 200px;
             height: 180px;
             perspective: 1000px;
-            position: relative;
-            margin-top: 20px;
         }
+
         .lantern {
             width: 100%;
             height: 100%;
-            position: absolute;
+            position: relative;
             transform-style: preserve-3d;
             animation: spin 20s linear infinite;
             cursor: pointer;
         }
+
         .lantern div {
             position: absolute;
             width: 200px;
             height: 180px;
-            border: 2px solid #ffeb3b;
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            overflow: hidden;
+            border: 2px solid #ffd700;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
             border-radius: 10px;
+            overflow: hidden;
+            /* Thêm dòng này để căn giữa nếu ảnh lỗi */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: black;
+            font-weight: bold;
         }
 
         .lantern img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            display: block;
         }
 
-        .lantern div:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Vị trí 6 mặt */
         .face1 { transform: rotateY(0deg) translateZ(175px); }
         .face2 { transform: rotateY(60deg) translateZ(175px); }
         .face3 { transform: rotateY(120deg) translateZ(175px); }
@@ -82,40 +77,32 @@
             to { transform: rotateY(360deg); }
         }
 
-        .note {
-            margin-top: 100px;
-            color: #aaa;
-            font-style: italic;
-            font-size: 0.9rem;
-        }
+        .note { color: #888; margin-top: 80px; font-style: italic; }
     </style>
 </head>
 <body>
 
-    <h1>Đèn Kéo Quân Trung Thu</h1>
+    <h1>Vui Tết Trung Thu</h1>
 
     <div class="stage">
-        <div class="lantern" id="myLantern">
-          
-            <div class="face1"><img src="img1.jpg" alt="Mặt 1"></div>
-            <div class="face2"><img src="img2.jpg" alt="Mặt 2"></div>
-            <div class="face3"><img src="img3.jpg" alt="Mặt 3"></div>
-            <div class="face4"><img src="img4.jpg" alt="Mặt 4"></div>
-            <div class="face5"><img src="img5.jpg" alt="Mặt 5"></div>
-            <div class="face6"><img src="img6.jpg" alt="Mặt 6"></div>
+        <div class="lantern" id="denLong">
+           
+            
+            <div class="face1"><img src="img1.jpg" alt="Lỗi: Kiểm tra tên img1.jpg"></div>
+            <div class="face2"><img src="img2.jpg" alt="Lỗi: Kiểm tra tên img2.jpg"></div>
+            <div class="face3"><img src="img3.jpg" alt="Lỗi: Kiểm tra tên img3.jpg"></div>
+            <div class="face4"><img src="img4.jpg" alt="Lỗi: Kiểm tra tên img4.jpg"></div>
+            <div class="face5"><img src="img5.jpg" alt="Lỗi: Kiểm tra tên img5.jpg"></div>
+            <div class="face6"><img src="img6.jpg" alt="Lỗi: Kiểm tra tên img6.jpg"></div>
         </div>
     </div>
 
-    <p class="note">Di chuột vào lồng đèn để dừng lại ngắm bánh!</p>
+    <p class="note">Di chuột vào để dừng đèn - Rê chuột ra để quay tiếp</p>
 
     <script>
-        const lantern = document.getElementById('myLantern');
-        lantern.addEventListener('mouseenter', () => {
-            lantern.style.animationPlayState = 'paused';
-        });
-        lantern.addEventListener('mouseleave', () => {
-            lantern.style.animationPlayState = 'running';
-        });
+        const den = document.getElementById('denLong');
+        den.addEventListener('mouseenter', () => den.style.animationPlayState = 'paused');
+        den.addEventListener('mouseleave', () => den.style.animationPlayState = 'running');
     </script>
 
 </body>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài tập 32 - Đèn Kéo Quân</title>
     <style>
-        /* Cấu hình chung */
+     
         body {
             margin: 0;
             padding: 0;
@@ -29,7 +29,7 @@
             letter-spacing: 2px;
         }
 
-        /* Vùng chứa 3D (Sân khấu) */
+      
         .stage {
             width: 200px;
             height: 180px; /* Giảm chiều cao chút cho cân đối với bánh */
@@ -38,7 +38,7 @@
             margin-top: 20px;
         }
 
-        /* Cái đèn lồng */
+     
         .lantern {
             width: 100%;
             height: 100%;
@@ -48,7 +48,7 @@
             cursor: pointer;
         }
 
-        /* Các mặt của đèn */
+   
         .lantern div {
             position: absolute;
             width: 200px;
@@ -74,8 +74,7 @@
             transform: scale(1.1); /* Phóng to nhẹ khi di chuột vào 1 mặt */
         }
 
-        /* --- TÍNH TOÁN VỊ TRÍ 6 MẶT (Lục giác) --- */
-        /* TranslateZ = Width / (2 * tan(30deg)) ≈ 175px */
+      
         
         .face1 { transform: rotateY(0deg) translateZ(175px); }
         .face2 { transform: rotateY(60deg) translateZ(175px); }
@@ -84,7 +83,7 @@
         .face5 { transform: rotateY(240deg) translateZ(175px); }
         .face6 { transform: rotateY(300deg) translateZ(175px); }
 
-        /* Animation quay */
+      
         @keyframes spin {
             from { transform: rotateY(0deg); }
             to { transform: rotateY(360deg); }
@@ -136,4 +135,5 @@
     </script>
 
 </body>
+
 </html>
